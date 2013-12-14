@@ -11,4 +11,6 @@ http://www.obelisk.demon.co.uk/6502/reference.html
 
 http://forums.nesdev.com/
 
+http://nesdev.com/apu_ref.txt
+
 http://www.cplusplus.com/forum/lounge/119813/
