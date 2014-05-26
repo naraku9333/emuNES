@@ -11,3 +11,23 @@
 *.lai
 *.la
 *.a
+
+# Executables
+*.exe
+*.out
+*.app
+
+#VS file
+*.sln
+*.suo
+*.vcxproj
+*.filters
+*.user
+*.sdf
+*.opensdf
+*.ilk
+*.pdb
+*.idb
+*.log
+*.tlog
+*.lastbuildstate
