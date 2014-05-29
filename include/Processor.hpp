@@ -1,6 +1,9 @@
 #ifndef SV_NES_CPU
 #define SV_NES_CPU
 #include <cstdint>
+#include <map>
+#include <functional>
+
 namespace sv
 {
 	namespace emuNES
@@ -17,7 +20,17 @@ namespace sv
 
 		class Processor
 		{
-			
+            static std::map<std::uint8_t, std::function<void()>> op_funcs;
+
+            public:
+
+            Processor() = default;
+            ~Processor() = default;
+
+            void execute(std::uint8_t opcode)
+            {
+                op_funcs.at(opcode)();
+            }
 		};
 	}
 }

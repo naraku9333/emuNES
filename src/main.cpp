@@ -9,10 +9,10 @@ int main()
 
     Rom rom;
     rom.load("data/nestest.nes");
-    auto x = rom.read<8, std::uint64_t>(62);
+    auto x = rom.read<std::uint64_t>(0);
     std::cout << "x=" << std::hex << x << std::endl;
 
-    auto y = rom.read<10>(16);
+    auto y = rom.read<16>(0);
     for (auto i : y)
         std::cout << std::hex << int(i) << ' ';
     std::cout << std::endl;
