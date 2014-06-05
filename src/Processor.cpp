@@ -1,11 +1,20 @@
 #include <Processor.hpp>
 #include <Opcodes.hpp>
-
+#include <initializer_list>
+#include <vector>
 namespace sv
 {
     namespace emuNES
     {
-        std::map<std::uint8_t, std::function<void()>> Processor::op_funcs
+        
+        /*template<opcode::mode m>
+        void op_func(opcode op)
+        {
+            
+        }*/
+        
+
+        std::unordered_map<std::uint8_t, std::function<void()>> Processor::op_funcs
         {
             { 0X00, std::bind(opcode::brk, opcode::mode::none) }, { 0x01, std::bind(opcode::ora, opcode::mode::none) }, { 0x05, std::bind(opcode::ora, opcode::mode::zeropage) },
             { 0x06, std::bind(opcode::asl, opcode::mode::zeropage) }, { 0x08, std::bind(opcode::php, opcode::mode::none) }, { 0x09, std::bind(opcode::ora, opcode::mode::immediate) },
@@ -23,6 +32,6 @@ namespace sv
             { 0x4A, std::bind(opcode::lsr, opcode::mode::none) }, { 0x4C, std::bind(opcode::jmp, opcode::mode::absolute) }, { 0x4D, std::bind(opcode::eor, opcode::mode::absolute) },
             { 0x4E, std::bind(opcode::lsr, opcode::mode::absolute) }, { 0x50, std::bind(opcode::bvc, opcode::mode::none) }, { 0x51, std::bind(opcode::eor, opcode::mode::indirect_y) },
             { 0x55, std::bind(opcode::eor, opcode::mode::zeropage_x) }, { 0x56, std::bind(opcode::zero_page_x, opcode::mode::none) }
-        };
+        };        
     }
 }

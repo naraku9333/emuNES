@@ -1,112 +1,112 @@
 #include <Opcodes.hpp>
-
+#include <iostream>
 namespace sv
 {
     namespace emuNES
     {
         namespace opcode
         {
-            void brk(const mode)
+            void brk(const mode m)
+            {
+                std::cout << "in brk, mode = " << int(m) << std::endl;
+            }
+
+            void ora(const mode m)
+            {
+                std::cout << "in ora, mode = " << int(m) << std::endl;
+            }
+
+            void asl(const mode m)
             {
 
             }
 
-            void ora(const mode)
+            void php(const mode m)
             {
 
             }
 
-            void asl(const mode)
+            void bpl(const mode m)
             {
 
             }
 
-            void php(const mode)
+            void clc(const mode m)
             {
 
             }
 
-            void bpl(const mode)
+            void blp(const mode m)
             {
 
             }
 
-            void clc(const mode)
+            void jsr(const mode m)
             {
 
             }
 
-            void blp(const mode)
+            void bit(const mode m)
             {
 
             }
 
-            void jsr(const mode)
+            void and(const mode m)
             {
 
             }
 
-            void bit(const mode)
+            void rol(const mode m)
             {
 
             }
 
-            void and(const mode)
+            void plp(const mode m)
             {
 
             }
 
-            void rol(const mode)
+            void bmi(const mode m)
             {
 
             }
 
-            void plp(const mode)
+            void sec(const mode m)
             {
 
             }
 
-            void bmi(const mode)
+            void rti(const mode m)
             {
 
             }
 
-            void sec(const mode)
+            void eor(const mode m)
             {
 
             }
 
-            void rti(const mode)
+            void lsr(const mode m)
             {
 
             }
 
-            void eor(const mode)
+            void jmp(const mode m)
             {
 
             }
 
-            void lsr(const mode)
+            void bvc(const mode m)
             {
 
             }
 
-            void jmp(const mode)
+            void pha(const mode m)
             {
 
             }
 
-            void bvc(const mode)
-            {
-
-            }
-
-            void pha(const mode)
-            {
-
-            }
-
-            void zero_page_x(const mode)
+            void zero_page_x(const mode m)
             {
 
             }

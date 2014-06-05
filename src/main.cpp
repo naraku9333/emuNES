@@ -7,13 +7,10 @@ int main()
 {
     using namespace sv::emuNES;
 
-    Rom rom;
-    rom.load("data/nestest.nes");
-    auto x = rom.read<std::uint64_t>(0);
-    std::cout << "x=" << std::hex << x << std::endl;
+    Processor cpu;
+    cpu.load_cart(Rom::get("data/nestest.nes"));
 
-    auto y = rom.read<16>(0);
-    for (auto i : y)
-        std::cout << std::hex << int(i) << ' ';
-    std::cout << std::endl;
+    auto m = cpu.get_mem();
+    auto i = m.read<std::uint32_t>(0x81F0);
+    std::cout << std::hex << i << std::endl;
 }
